@@ -8,7 +8,7 @@ import Bookmarks from './pages/Bookmarks';
 import Header from './components/Header';
 import Cart from './components/Cart';
 
-const AppContext = React.createContext({});
+export const AppContext = React.createContext({});
 
 const arr = [
   {
@@ -96,43 +96,40 @@ function App() {
   };
 
   return (
-    <div className="wrapper clear">
-      {cartOpened && (
-        <Cart
-          onClickClose={() => setCartOpened(false)}
-          onClickDelete={deleteFromCart}
-          items={cartItems}
-        />
-      )}
-      <Header onClickCart={() => setCartOpened(true)} />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              searchValue={searchValue}
-              onChangeSearchInput={onChangeSearchInput}
-              items={items}
-              cartItems={cartItems}
-              favoriteItems={favoriteItems}
-              addToFavorites={addToFavorites}
-              addToCart={addToCart}
-            />
-          }
-        />
-        <Route
-          path="/bookmarks"
-          element={
-            <Bookmarks
-              favoriteItems={favoriteItems}
-              addToFavorites={addToFavorites}
-              addToCart={addToCart}
-              cartItems={cartItems}
-            />
-          }
-        />
-      </Routes>
-    </div>
+    <AppContext.Provider value={{ items, cartItems, favoriteItems }}>
+      <div className="wrapper clear">
+        {cartOpened && (
+          <Cart
+            onClickClose={() => setCartOpened(false)}
+            onClickDelete={deleteFromCart}
+            items={cartItems}
+          />
+        )}
+        <Header onClickCart={() => setCartOpened(true)} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Home
+                searchValue={searchValue}
+                onChangeSearchInput={onChangeSearchInput}
+                addToFavorites={addToFavorites}
+                addToCart={addToCart}
+              />
+            }
+          />
+          <Route
+            path="/bookmarks"
+            element={
+              <Bookmarks
+                addToFavorites={addToFavorites}
+                addToCart={addToCart}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </AppContext.Provider>
   );
 }
 

@@ -1,14 +1,10 @@
+import React from 'react';
 import Card from '../components/Card';
+import { AppContext } from '../App';
 
-function Home({
-  searchValue,
-  onChangeSearchInput,
-  items,
-  cartItems,
-  favoriteItems,
-  addToFavorites,
-  addToCart,
-}) {
+function Home({ searchValue, onChangeSearchInput, addToFavorites, addToCart }) {
+  const { items, cartItems, favoriteItems } = React.useContext(AppContext);
+
   return (
     <div className="content p-40">
       <div className="d-flex align-center justify-between  mb-40">
