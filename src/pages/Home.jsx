@@ -12,7 +12,12 @@ function Home({ searchValue, onChangeSearchInput, addToFavorites, addToCart }) {
           {searchValue ? `Поиск по запросу "${searchValue}"` : 'Весь парфюм'}
         </h1>
         <div className="search-block d-flex">
-          <img src="" alt="Search" />
+          <img
+            className="mt-15"
+            height={20}
+            src="/img/search.svg"
+            alt="Search"
+          />
           <input onChange={onChangeSearchInput} placeholder="Поиск..." />
         </div>
       </div>

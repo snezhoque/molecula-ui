@@ -7,7 +7,8 @@ function Cart({ onClickClose, onClickDelete, items = [] }) {
           <img
             className="removeBtn"
             onClick={onClickClose}
-            src=""
+            height={24}
+            src="/img/close.svg"
             alt="Close"
           />
         </h2>
@@ -29,8 +30,9 @@ function Cart({ onClickClose, onClickDelete, items = [] }) {
                     onClick={() => {
                       onClickDelete(obj);
                     }}
-                    className="removeBtn"
-                    src=""
+                    height={24}
+                    className="removeBtn mr-15"
+                    src="img/remove.svg"
                     alt="Remove"
                   />
                 </div>

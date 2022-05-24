@@ -29,27 +29,30 @@ function Card({
     <div className={styles.card}>
       <div className={styles.bookmark} onClick={onClickBookmark}>
         <img
-          src={isBooked ? '/img/booked.png' : '/img/unbooked.png'}
+          width={24}
+          src={isBooked ? '/img/booked.svg' : '/img/unbooked.svg'}
           alt="Bookmark"
         />
       </div>
       <img width={150} height={150} src={imageUrl} alt="Parfum" />
       <h5>{title}</h5>
-      <div>
+      {/* <div>
         <button>30 ml</button>
         <button>100 ml</button>
-      </div>
+      </div> */}
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column">
           <span>Цена:</span>
           <b>{price} руб.</b>
         </div>
-        <button className={styles.button} onClick={onClickAdd}>
-          <img
-            src={isAdded ? '/img/booked.png' : '/img/unbooked.png'}
-            alt="Add"
-          />
-        </button>
+
+        <img
+          className={styles.button}
+          onClick={onClickAdd}
+          width={32}
+          src={isAdded ? '/img/added.svg' : '/img/notadded.svg'}
+          alt="Add"
+        />
       </div>
     </div>
   );
