@@ -5,7 +5,7 @@ function Cart({ onClickClose, onClickDelete, items = [] }) {
         <h2 className="d-flex justify-between mb-40">
           Корзина
           <img
-            className="removeBtn"
+            className="hoverBtn"
             onClick={onClickClose}
             height={24}
             src="/img/close.svg"
@@ -31,7 +31,7 @@ function Cart({ onClickClose, onClickDelete, items = [] }) {
                       onClickDelete(obj);
                     }}
                     height={24}
-                    className="removeBtn mr-15"
+                    className="hoverBtn mr-15"
                     src="img/remove.svg"
                     alt="Remove"
                   />

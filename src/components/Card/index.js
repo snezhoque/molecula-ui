@@ -36,10 +36,17 @@ function Card({
       </div>
       <img width={150} height={150} src={imageUrl} alt="Parfum" />
       <h5>{title}</h5>
-      {/* <div>
-        <button>30 ml</button>
-        <button>100 ml</button>
-      </div> */}
+      <div className="mb-25 d-flex flex-column">
+        <div>
+          <button>30 ml</button>
+          <button>100 ml</button>
+          <button>120 ml</button>
+        </div>
+        <div>
+          <button>3 ml</button>
+          <button>9 ml</button>
+        </div>
+      </div>
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column">
           <span>Цена:</span>
@@ -47,10 +54,10 @@ function Card({
         </div>
 
         <img
-          className={styles.button}
+          className="cu-p"
           onClick={onClickAdd}
           width={32}
-          src={isAdded ? '/img/added.svg' : '/img/notadded.svg'}
+          src={isAdded ? '/img/added.svg' : '/img/add.svg'}
           alt="Add"
         />
       </div>

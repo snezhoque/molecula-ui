@@ -17,16 +17,16 @@ function Header(props) {
       </Link>
 
       <ul className="d-flex">
-        <li className="mr-30 cu-p" onClick={props.onClickCart}>
+        <li className="hoverBtn mr-30 cu-p" onClick={props.onClickCart}>
           <img height={20} src="/img/cart.svg" alt="Cart" />
           <span>14 444 руб.</span>
         </li>
-        <li>
+        <li className="hoverBtn">
           <Link to="/bookmarks">
             <img height={20} src="/img/bookmarks.svg" alt="Bookmarks" />
           </Link>
         </li>
-        <li>
+        <li className="hoverBtn">
           <img height={20} src="/img/user.svg" alt="User" />
         </li>
       </ul>

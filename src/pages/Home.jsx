@@ -13,7 +13,7 @@ function Home({ searchValue, onChangeSearchInput, addToFavorites, addToCart }) {
         </h1>
         <div className="search-block d-flex">
           <img
-            className="mt-15"
+            className="mt-15 opacity-1"
             height={20}
             src="/img/search.svg"
             alt="Search"
